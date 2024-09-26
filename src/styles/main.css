@@ -1,0 +1,131 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#fcbd1e, #f5a422);
+    min-height: 100vh;
+    user-select: none;
+    color: #f2f2f2;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header p {
+    font-size: 16px;
+    margin: auto 20px;
+}
+
+#main-title {
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: #fc7a1e 0 0 20px;
+    letter-spacing: 0.1em;
+    font-size: 5em;
+    width: 500px;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: 40px 60px;
+    background-color: #fcda19;
+    box-shadow: 0 0 20px #fc7a1e;
+    border-radius: 20px;
+    gap: 30px;
+}
+
+.reset {
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    padding: 15px 20px;
+    width: 100%;
+    height: 60px;
+    background-color: #f2f2f2;
+    color: #242424;
+    cursor: pointer;
+    transform: scale(1.0);
+    transition: all ease 300ms;
+}
+
+.reset:hover {
+    transform: scale(1.1);
+}
+
+.reset:focus {
+    background-color: #242424;
+    color: #f2f2f2;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 1px solid #fc7a1e;
+    border-radius: 20px;
+    width: 430px;
+    height: 430px;
+    gap: 10px;
+    transform-style: preserve-3d;
+}
+
+.card, #logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #242424;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    transition: all ease 300ms;
+}
+
+#logo {
+    width: 120px;
+    transform: rotateY(180deg);
+}
+
+.card::after {
+    inset: 0;
+    content: "";
+    position: absolute;
+    background-color: #242424; /* Cor do verso da carta */
+    backface-visibility: hidden;
+    border-radius: 20px;
+    opacity: 1; /* Opacidade total */
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: opacity 0.3s ease; /* Transição suave para a opacidade */
+}
+
+.card img.hidden {
+    opacity: 0; /* Imagem desaparece quando 'hidden' */
+}
+
+.card.card-open img {
+    opacity: 1; /* Imagem aparece quando aberta */
+}
+
+.card.card-open {
+    transform: rotateY(180deg);
+}
+
+.card-open::after, .card-match::after {
+    transition: rotateY(180deg);
+    opacity: 0; /* Oculta o verso quando a carta está aberta */
+}

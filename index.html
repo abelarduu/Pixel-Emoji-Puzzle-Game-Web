@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <title>Pixel Emoji Puzzle: Jogo da Memória</title>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="./src/images/emojis.gif" alt="animação de varios emojis">
+        </div>
+        <div>
+            <h2 id="main-title">Pixel Emoji Puzzle Game</h2>
+            <p>Junte os pares dos emojis e evite o emoji curinga "😜"</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="game"></div>
+        <button class="reset" onclick="window.location.reload()">RESET GAME</button>
+    </main>
+
+    <script src="./src/scripts/engine.js" defer></script>
+</body>
+</html>
