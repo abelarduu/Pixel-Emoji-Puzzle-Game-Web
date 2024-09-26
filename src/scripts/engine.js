@@ -12,11 +12,17 @@ const objEmojis = [
 
 let openCards = [];
 
+function playSound(){
+    let audio = new Audio("./src/audios/hit.m4a");
+    audio.volume = 0.01;
+    audio.play();
+}
 
 function checkMatch(){
     if (openCards[0].innerHTML === openCards[1].innerHTML){
         openCards[0].classList.add("card-match");
         openCards[1].classList.add("card-match");
+        playSound();
     } else {
         openCards[0].classList.remove("card-open");
         openCards[1].classList.remove("card-open");
@@ -38,6 +44,7 @@ function handleClick(){
 
     if (document.querySelectorAll(".card-match").length === objEmojis.length-1) {
         setTimeout(() => alert("Você Venceu!"), 100); 
+        playSound();
     }
 }
 
